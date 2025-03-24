@@ -4,5 +4,5 @@
   padding: 0;
   border: 0;
   font-family: "Press Start 2P", cursive;
-  user-select: none;
+  user-select: none; /* para o usuário não selecionar as coisas na tela*/
 }

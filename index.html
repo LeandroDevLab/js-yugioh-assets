@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh Jo-ken-po Edition!</title>
+
+    <!-- reset css -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <!-- framerok -->
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- main style -->
+    <link rel="stylesheet" href="./src/styles/main.css">
+
+
+</head>
+<body>
+    
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4"/>
+        </video>
+    </div>
+    <div class="container">
+        <div class="container__left framed-golden-2">
+            <div class="score_box frame">
+                <span id="scoree_points">Win : 0 | Lose: 0</span>
+            </div>
+            <div class="menu_avatar">
+                <img id="card-image">
+            </div>
+            <div class="card_details frame">
+                <p id="card-name">a</p>
+                <p id="card-type">a</p>
+
+            </div>
+        </div>
+
+        <div class="container__rigth">
+            <div class="card-box__container">
+
+                <div id="computer-cards" class="card-box framed"></div>
+                <div class="card-versus"></div>
+                <div id="player-cards" class="card-box framed"></div>
+
+            </div>
+            
+
+            
+            
+        </div>
+    </div>
+
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
