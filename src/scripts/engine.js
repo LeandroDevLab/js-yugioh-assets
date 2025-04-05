@@ -103,7 +103,7 @@ async function setCardsField(cardId) {
 }
 
 async function drawButton(text) {
-    state.actions.button.innerText = text;
+    state.actions.button.innerText = text.toUpperCase();
     state.actions.button.style.display = "block";
 }
 
@@ -112,15 +112,20 @@ async function updateScore() {
 }
 
 async function checkDuelResults(playerCardId, ComputerCardId) {
-    let duelResults = "DRAW"
+    let duelResults = "DrAw"
     let playerCard = cardData[playerCardId];
+
+    /*
+    tirei as duas condições IF e coloquei uma condição IF ELSE IF e ELSE para 
+    chamar as condições e implementar o audio para empate
+    */
 
     if(playerCard.WinOf.includes(ComputerCardId)){
         duelResults = "WIN";
         await playAudio("win.wav");
         state.score.playerScore++;
     } else if(playerCard.LoseOf.includes (ComputerCardId)){
-        duelResults = "LOSE";
+        duelResults = "lose";
         await playAudio("lose.wav");
         state.score.computerScore++;
     } else {
