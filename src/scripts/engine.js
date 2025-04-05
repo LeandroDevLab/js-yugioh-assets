@@ -179,6 +179,11 @@ async function drawCards(cardNumbers, fieldSide) {
 function init(){
     drawCards(5, state.playerSides.player1); // para mudar num lugar só
     drawCards(5, state.playerSides.computer);
+
+    //forçando meu navegador tocar a música
+    const backgroundmusic = document.getElementById("backgroundmusic");
+    backgroundmusic.volume = 0.7;
+    backgroundmusic.play();
 }
 
 async function resetDuel() {
