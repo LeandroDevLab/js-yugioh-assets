@@ -84,14 +84,24 @@ async function createCardImage(IdCard, fieldSide) {
     return cardImage;
 }
 
+async function ShowHiddenCardFieldsImages(value) {
+    //value será um boleano
+    if(value === true){
+        state.fieldCards.player.style.display = "block";
+        state.fieldCards.computer.style.display = "block";
+    } else if (value === false){
+        state.fieldCards.player.style.display = "none";
+        state.fieldCards.computer.style.display = "none";
+    }
+}
+
 async function setCardsField(cardId) {
 
     await removeAllCardsImages();
 
     let computerCardId = await getRandomCardId();
 
-    state.fieldCards.player.style.display = "block";
-    state.fieldCards.computer.style.display = "block";
+    ShowHiddenCardFieldsImages(true);
     
     state.fieldCards.player.src = cardData[cardId].img;
     state.fieldCards.computer.src = cardData[computerCardId].img;
@@ -133,7 +143,6 @@ async function checkDuelResults(playerCardId, ComputerCardId) {
     }
 
     return duelResults;
-
 }
 
 async function removeAllCardsImages() {
@@ -176,8 +185,7 @@ async function resetDuel() {
     state.cardSprites.avatar.src = "";
     state.actions.button.style.display = "none";
 
-    state.fieldCards.player.style.display = "none";
-    state.fieldCards.computer.style.display = "none";
+    ShowHiddenCardFieldsImages(false);
 
     state.cardSprites.name.innerText = "Selecione"; //meu incremento
     state.cardSprites.type.innerText = "uma carta"; //meu incremento
