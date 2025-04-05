@@ -130,6 +130,7 @@
     height: 11.2rem;
     width: 8rem;
     border-radius: 8px;
+    border: 1px solid #fff;
 }
 
 #player-cards .card{
@@ -138,4 +139,9 @@
 
 #player-cards .card:hover{
     transform: scale(1.15);
+}
+
+#player-field-card,
+#computer-field-card {
+    display: none;
 }
